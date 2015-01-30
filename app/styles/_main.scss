@@ -1,0 +1,45 @@
+
+html, body {
+  /*margin: 20px;*/
+}
+h2 { 
+	font-family: 'PT Sans', sans-serif; 
+}
+
+#title {
+	font-weight: normal;
+}
+
+#main {
+	margin-top: 20px;
+	min-height: 300px;
+}
+
+footer {
+	color: #aaa;
+
+	&.row {
+		max-width: none;
+		margin-top: 20px;
+	}
+
+	p {
+		font-size: rem-calc(12);
+		margin: 0;
+		padding: 5px 0;
+		border-top: 1px solid #ccc;
+	}
+}
+
+.goal-panel {
+	padding: 5px;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+}
+
+.ember-view {
+/*	border: 1px solid rgb(113, 70, 70);
+	padding: 5px;
+	margin: 2px;
+	background-color: rgba(79, 61, 39, 0.2);*/
+}

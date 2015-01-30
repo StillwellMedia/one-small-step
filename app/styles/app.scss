@@ -1,0 +1,9 @@
+// Override Foundation Global settings
+@import 'settings';
+
+// DO NOT edit any foundation files, override styles instead
+//@import 'bower_components/foundation/scss/normalize';
+@import 'bower_components/foundation/scss/foundation';
+
+//Main app styles
+@import 'main';
