@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/Users/Lindsay/Development/personal-projects/EmberJs/to-do-app"
+			"path": "/C/Users/Lindsay/Development/Personal/one-small-step",
+			"folder_exclude_patterns": ["tmp"]
 		}
 	]
 }

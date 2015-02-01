@@ -1,0 +1,13 @@
+{{#link-to 'goals'}}< Back{{/link-to}}
+
+<p>New Goal</p>
+
+<form action="" method="">
+	{{input type="text" name="name" autofocus="true" required="true" placeholder="Goal Name"}}
+	{{textarea cols="80" placeholder="Optional Description of your Goal"}}
+	<label>{{input type="checkbox"}} Add Steps </label>
+	{{input class="button tiny" type="submit" value="submit"}}
+</form>
+
+{{outlet}}
+

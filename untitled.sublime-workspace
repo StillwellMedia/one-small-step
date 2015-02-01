@@ -48,14 +48,6 @@
 	"buffers":
 	[
 		{
-			"file": "app/templates/application.hbs",
-			"settings":
-			{
-				"buffer_size": 121,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/app.js",
 			"settings":
 			{
@@ -64,26 +56,46 @@
 			}
 		},
 		{
-			"file": "app/styles/app.scss",
-			"settings":
-			{
-				"buffer_size": 489,
-				"line_ending": "Unix"
-			}
-		},
-		{
+			"contents": "import Ember from 'ember';\nimport config from './config/environment';\n\nvar Router = Ember.Router.extend({\n  location: config.locationType\n});\n\nRouter.map(function() {\n  this.route('new-goal');\n  this.route('home', { path: '/'});\n  this.resource('goals', function(){\n  	this.route('new');\n  	this.route('list');  // ember g route goals/list // then re-write the router code\n  });\n});\n\nexport default Router;\n ",
 			"file": "app/router.js",
+			"file_size": 346,
+			"file_write_time": 130672240870917984,
 			"settings":
 			{
-				"buffer_size": 299,
+				"buffer_size": 408,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/templates/new-do.hbs",
+			"file": "app/templates/goals/new.hbs",
 			"settings":
 			{
-				"buffer_size": 25,
+				"buffer_size": 382,
+				"line_ending": "Windows",
+				"name": "new.hbs"
+			}
+		},
+		{
+			"file": "app/templates/goals/list.hbs",
+			"settings":
+			{
+				"buffer_size": 139,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/goals.hbs",
+			"settings":
+			{
+				"buffer_size": 105,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/application.js",
+			"settings":
+			{
+				"buffer_size": 99,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,31 +103,23 @@
 			"file": "app/templates/home.hbs",
 			"settings":
 			{
-				"buffer_size": 201,
+				"buffer_size": 121,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/components/todo-header/template.hbs",
+			"file": "/C/Users/Lindsay/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 881,
+				"buffer_size": 406,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/components/todo-footer/template.hbs",
+			"file": "app/templates/application.hbs",
 			"settings":
 			{
-				"buffer_size": 72,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/components/todo-header/component.js",
-			"settings":
-			{
-				"buffer_size": 91,
+				"buffer_size": 135,
 				"line_ending": "Unix"
 			}
 		}
@@ -144,6 +148,21 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/routes/goal/list.js",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/templates/goal/new.hbs",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/templates/goals-new.hbs",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/routes/goalsNew.js",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/styles/_main.scss",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/components/todo-header/template.hbs",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/templates/application.hbs",
+		"/C/Users/Lindsay/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/components/todo-header/component.js",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/templates/new-do.hbs",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/untitled.sublime-project",
+		"/C/Users/Lindsay/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/styles/app.scss",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/app/components/todo-footer/template.hbs",
+		"/C/Users/Lindsay/Development/Personal/one-small-step/untitled.sublime-workspace",
 		"/Users/Lindsay/Development/personal-projects/EmberJs/to-do-app/config/environment.js",
 		"/Users/Lindsay/Development/personal-projects/EmberJs/to-do-app/app/components/todo-footer/component.js",
 		"/Users/Lindsay/Development/personal-projects/EmberJs/to-do-app/app/index.html",
@@ -264,6 +283,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"U:sers\\Lindsay\\Development\\personal-projects\\EmberJs\\to-do-app",
 			"/Users/Lindsay/Development/metaphor/trunk/metaphor/metaphor-v2-client/app",
 			"",
 			"/Users/Lindsay/Development/metaphor/trunk/metaphor/metaphor-v2-client/dist/images",
@@ -277,6 +297,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"css",
+			" [\".",
 			"panel",
 			"transparent",
 			"top-bar",
@@ -402,9 +424,7 @@
 			"padding",
 			"label",
 			".2",
-			"padding",
-			"// ",
-			"line-height"
+			"padding"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -430,37 +450,11 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/templates/application.hbs",
-					"settings":
-					{
-						"buffer_size": 121,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26,
-								30
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "app/app.js",
 					"settings":
 					{
@@ -471,8 +465,8 @@
 						"selection":
 						[
 							[
-								473,
-								473
+								483,
+								483
 							]
 						],
 						"settings":
@@ -487,24 +481,51 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/styles/app.scss",
+					"buffer": 1,
+					"file": "app/router.js",
 					"settings":
 					{
-						"buffer_size": 489,
+						"buffer_size": 408,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								307,
-								307
+								342,
+								342
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/templates/goals/new.hbs",
+					"settings":
+					{
+						"buffer_size": 382,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								382,
+								382
+							]
+						],
+						"settings":
+						{
+							"auto_name": "new.hbs",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -514,23 +535,49 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/router.js",
+					"file": "app/templates/goals/list.hbs",
 					"settings":
 					{
-						"buffer_size": 299,
+						"buffer_size": 139,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								266,
-								266
+								139,
+								139
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/templates/goals.hbs",
+					"settings":
+					{
+						"buffer_size": 105,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -545,50 +592,24 @@
 			"sheets":
 			[
 				{
-					"buffer": 4,
-					"file": "app/templates/new-do.hbs",
-					"settings":
-					{
-						"buffer_size": 25,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13,
-								13
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 5,
-					"file": "app/templates/home.hbs",
+					"file": "app/controllers/application.js",
 					"settings":
 					{
-						"buffer_size": 201,
+						"buffer_size": 99,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								96,
-								96
+								95,
+								95
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -598,18 +619,18 @@
 				},
 				{
 					"buffer": 6,
-					"file": "app/components/todo-header/template.hbs",
+					"file": "app/templates/home.hbs",
 					"settings":
 					{
-						"buffer_size": 881,
+						"buffer_size": 121,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19,
-								19
+								121,
+								121
 							]
 						],
 						"settings":
@@ -624,23 +645,23 @@
 				},
 				{
 					"buffer": 7,
-					"file": "app/components/todo-footer/template.hbs",
+					"file": "/C/Users/Lindsay/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 					"settings":
 					{
-						"buffer_size": 72,
+						"buffer_size": 406,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								47,
-								47
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -650,23 +671,23 @@
 				},
 				{
 					"buffer": 8,
-					"file": "app/components/todo-header/component.js",
+					"file": "app/templates/application.hbs",
 					"settings":
 					{
-						"buffer_size": 91,
+						"buffer_size": 135,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								89,
+								89
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -705,7 +726,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.642407553108,
 			1.0
 		],
 		"rows":
@@ -840,6 +861,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 202.0,
+	"side_bar_width": 200.0,
 	"status_bar_visible": true
 }
