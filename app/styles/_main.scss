@@ -35,6 +35,10 @@ footer {
 	padding: 5px;
 	margin: 10px 0;
 	border: 1px solid #ddd;
+
+	li {
+		list-style-position: inside;
+	}
 }
 
 input[type="submit"] { float: right; }

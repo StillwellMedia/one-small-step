@@ -5,24 +5,23 @@ import DS from 'ember-data';
 // });
 
 var Goal = DS.Model.extend({
-  title: DS.attr('string')
+  title: DS.attr('string'),
+  steps: DS.hasMany('step') //, {async: true})
 });
-
 
 Goal.reopenClass({FIXTURES : [
 	{ 	
 		id : 1,
-		title: 'goal 1'
+		title: 'Conquer the Dewey Decimal System'
 	},
 	{ 	
 		id : 2,
-		title: 'goal 2'
+		title: 'Learn Ember.js'
 	},
 	{ 	
 		id : 3,
-		title: 'goal 3'
+		title: 'Make portfolio site'
 	}
 ]});
 
 export default Goal;
-

@@ -1,6 +1,11 @@
 <img src="http://placehold.it/350x150&text=D3chart"><br/>
 
+{{title}}
 
-I am a goal -- {{title}}
+<ul> 
+	{{#each steps}}
+		{{partial 'step'}}
+	{{/each}}
+</ul>
 
 {{outlet}}

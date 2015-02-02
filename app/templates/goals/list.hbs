@@ -1,9 +1,16 @@
-<p>The following will be a list of goals</p>
+<p>Goals:</p>
 
-<div class="goal-panel">
-	<h3>goal 1</h3>
-	<p>sub goals</p>
-	<p>timer</p>
-</div>
+<ol class="goal-panel">
+	{{#each goals}}
+		<li>
+			<h3>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}}</h3>
+			<ul> 
+				{{#each steps}}
+					{{partial 'step'}}
+				{{/each}}
+			</ul>
+		</li>
+	{{/each}}
+</ol>
 
-{{outlet}}
+{{outlet}} 
