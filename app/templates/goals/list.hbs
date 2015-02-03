@@ -1,9 +1,9 @@
-<p>Goals:</p>
+<p>Goals: {{numGoals}}</p>
 
 <ol class="goal-panel">
 	{{#each goals}}
 		<li>
-			<h3>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}}</h3>
+			<h4>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}}</h4>
 			<ul> 
 				{{#each steps}}
 					{{partial 'step'}}

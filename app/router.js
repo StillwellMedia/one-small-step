@@ -8,7 +8,9 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('home', { path: '/'});
   this.resource('goals', function(){ //goals template persists throught all sub routes as wrapper
-  	//there is an undeclared goals/index route that is rendered into the /goals page
+  	// undeclared: goals/index route that is rendered into the /goals page
+    // undeclared: loading
+    // undeclared: error
   	this.route('new');
   	this.route('list');  // ember g route goals/list // then re-write the router code
 	this.route('goal', { path: '/goal/:goal_id' });

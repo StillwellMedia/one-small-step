@@ -31,7 +31,7 @@ var PointPlus = Point.extend({
 		var x = this.get('x');
 		return x * x;
 	}.property(), // putting property on this marks it as a 'Computed Property' 
-				  //(Like a veriable you can access who's value is dynaminc)
+				  //(Like a variable you can access who's value is dynaminc)
 				  // Despite the fact that this is a function you can only access the value like so:
 				  // point.get('squareX')
 
