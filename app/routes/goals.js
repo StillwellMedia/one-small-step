@@ -6,5 +6,15 @@ export default Ember.Route.extend({
         	goals: this.store.find('goal'),
         	steps: this.store.find('step')
       	});
+	},
+
+    randomGoal : function () {
+    	this.transitionTo('/goals/goal/' + this.get('controller').randomGoal());
+    },
+
+	actions : {
+		random: function() {
+			this.randomGoal(); 
+		}
 	}
 });

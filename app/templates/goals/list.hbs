@@ -3,12 +3,14 @@
 <ol class="goal-panel">
 	{{#each goals}}
 		<li>
-			<h4>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}}</h4>
-			<ul> 
-				{{#each steps}}
-					{{partial 'step'}}
-				{{/each}}
-			</ul>
+			<h4>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}} <a href="javascript(0):void" {{action 'delete' this}}>X</a></h4>
+			{{#if steps}}
+				<ul>
+					{{#each steps}}
+						{{partial 'step'}}
+					{{/each}}
+				</ul>
+			{{/if}}
 		</li>
 	{{/each}}
 </ol>

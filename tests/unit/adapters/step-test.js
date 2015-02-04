@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('adapter:goals/goal', 'GoalsGoalAdapter', {
+moduleFor('adapter:step', 'StepAdapter', {
   // Specify the other units that are required for this test.
   // needs: ['serializer:foo']
 });

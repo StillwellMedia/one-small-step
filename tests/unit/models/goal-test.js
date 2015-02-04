@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('goals/index', 'GoalsIndex', {
+moduleForModel('goal', 'Goal', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:step']
 });
 
 test('it exists', function() {

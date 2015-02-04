@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('view:task', 'TaskView');
+moduleFor('view:goals', 'GoalsView');
 
 // Replace this with your real tests.
 test('it exists', function() {
