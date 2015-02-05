@@ -13,14 +13,8 @@ export default Ember.ObjectController.extend({
     	var max = this.get('numGoals');
     	var randomArrayPosition = Math.round( Math.random() * (max - 1));
     	var goal = this.get('goals').toArray()[randomArrayPosition];
-    	
-    	/*
-		console.log( goal );
-		console.log( goal.id );
-		console.log( goal.get('title') );
-		*/
 
 		return goal.get('id'); // returning the goal id instead of a random number alone 
-						// prevents the app from being directed to a non-existant goal
+							   // prevents the app from being directed to a non-existant goal
     }
 });
