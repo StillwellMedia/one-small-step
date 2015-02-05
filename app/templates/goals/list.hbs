@@ -1,18 +1,20 @@
 <p>Goals: {{numGoals}}</p>
 
-<ol class="goal-panel">
-	{{#each goals}}
-		<li>
-			<h4>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}} <a href="javascript(0):void" {{action 'delete' this}}>X</a></h4>
-			{{#if steps}}
-				<ul>
-					{{#each steps}}
-						{{partial 'step'}}
-					{{/each}}
-				</ul>
-			{{/if}}
-		</li>
-	{{/each}}
-</ol>
+{{#if hasItems}}
+	<ol class="goal-panel">
+		{{#each goals}}
+			<li>
+				<h4>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}} <a class="delete-x" href="javascript(0):void" {{action 'delete' this}}>x</a></h4>
+				{{#if steps}}
+					<ul>
+						{{#each steps}}
+							{{partial 'step'}}
+						{{/each}}
+					</ul>
+				{{/if}}
+			</li>
+		{{/each}}
+	</ol>
+{{/if}}
 
 {{outlet}} 

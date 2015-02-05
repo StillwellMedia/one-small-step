@@ -2,11 +2,11 @@
 
 <p>New Goal</p>
 
-<form action="" method="">
-	{{input type="text" name="name" autofocus="true" required="true" placeholder="Goal Name"}}
-	{{textarea cols="80" placeholder="Optional Description of your Goal"}}
+<form action="" method="" {{ action 'createNew' on="submit" }}>
+	{{input type="text" name="title" autofocus="true" autocomplete="off" required="true" placeholder="Goal Name" valueBinding=goalTitle}}
+	{{textarea cols="80" name="description" placeholder="Optional Description of your Goal" valueBinding=goalDescription}}
 	<label>{{input type="checkbox"}} Add Steps </label>
-	{{input class="button tiny" type="submit" value="submit"}}
+	{{input class="button tiny" type="submit" value="submit" }}
 </form>
 
 {{outlet}}

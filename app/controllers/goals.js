@@ -20,7 +20,7 @@ export default Ember.ObjectController.extend({
 		console.log( goal.get('title') );
 		*/
 
-		return goal.id; // returning the goal id instead of a random number alone 
+		return goal.get('id'); // returning the goal id instead of a random number alone 
 						// prevents the app from being directed to a non-existant goal
     }
 });
