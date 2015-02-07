@@ -4,7 +4,7 @@
 
 <form action="" method="" {{ action "createNew" on="submit" }}>
 	{{input type="text" name="title" autofocus="true" autocomplete="off" required="true" placeholder="Goal Name" valueBinding="goalTitle"}}
-	{{textarea cols="80" name="description" placeholder="Optional Description of your Goal" valueBinding="goalDescription"}}
+	{{view 'custom-textarea' cols="80" name="description" placeholder="Optional Description of your Goal" valueBinding="goalDescription"}}
 	
 	{{#if hasSteps}}
 		<p>Steps:</p?

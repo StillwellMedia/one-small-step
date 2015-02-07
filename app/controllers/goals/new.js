@@ -10,14 +10,14 @@ export default Ember.Controller.extend({
 	userHasEnteredText: function() {
 		var bool = false;
 
-		 $('form input[type=text], form textarea').each(function(){
+		$('form input[type=text], form textarea').each(function(){
 		 	if ( $(this).val().length > 0 ) {
 		 		bool = true;
 		 		return false;
 		 	}
-		 });
+		});
 
-		 return bool;
+		return bool;
 	},
 
 	hasSteps: function() {
