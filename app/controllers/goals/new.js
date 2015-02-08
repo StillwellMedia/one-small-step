@@ -46,7 +46,6 @@ export default Ember.Controller.extend({
 	submitForm: function() {
 		var that = this;
 		var newGoal = this.newGoal();
-
 		
 		newGoal.save().then(function( goal ){
 
@@ -56,7 +55,6 @@ export default Ember.Controller.extend({
 			});
 			that.resetForm();
 		});
-		
 	},
 
 	resetForm: function() {
