@@ -5,9 +5,7 @@ import DS from 'ember-data';
 // });
 
 var Goal = DS.Model.extend({
-	title: DS.attr('string', {
-          defaultValue: function() { return 'Boobies'; }
-    }),
+	title: DS.attr('string'),
 	description: DS.attr('string'),
 	steps: DS.hasMany('step'),// {async: true})
 	createdAt: DS.attr('date', {
@@ -31,7 +29,7 @@ Goal.reopenClass({FIXTURES : [
 		title: 'Learn Ember.js',
 		description : 'No piece makes sense, without first understanding all the other pieces.',
 		createdAt: '2015-01-20T15:04:01',
-		lastEdited: '2015-02-07T17:39:00'
+		lastEdited: '2015-02-08T17:39:00'
 	},
 	{ 	
 		id : 3,

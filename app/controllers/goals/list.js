@@ -1,6 +1,30 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+	queryParams: ['editedDate'], // ?query to url
+	
+	editedDate: null, // ? =param to url
+
+	filteredGoals: function() {
+        var editedDate = this.get('editedDate');
+        var sortDate = moment( editedDate ).format('L'); //redundent now but won't be in the future
+	    var goals = this.get('goals');
+
+	    if ( editedDate ) {
+	    	// Filter out the goals that match the provided date and show them 
+	    	// http://emberjs.com/api/#method_computed_filter (goal, index, array)
+	    	return goals.filter(function(goal) {
+			    return moment(goal.get('lastEdited')).format('L') === sortDate;
+			});
+	    } else {
+
+	    	// If no query show all goals
+	    	return goals; 
+	    }
+
+    }.property('editedDate', 'goals'), // function is updated when editedDate changes
+
+
 	numGoals: function() {
         return this.get('goals.length');
     }.property('goals.[]'), // function is updated when goals array changes
@@ -31,6 +55,14 @@ export default Ember.ObjectController.extend({
     actions : {
 		delete: function( goal ) {
 			this.destroyGoal( goal );
+		},
+
+		filterToday: function( ) {
+			this.set('editedDate', moment(new Date()).format('L') );
+		},
+
+		filterReset: function( ) {
+			this.set('editedDate', null );
 		}
 	}
 });

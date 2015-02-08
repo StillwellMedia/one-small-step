@@ -24,6 +24,16 @@ Step.reopenClass({FIXTURES : [
 	},
 	{ 	
 		id : 4,
+		goal: 2,
+		title: 'Pull hair out for 2 hours (Remember to set quantifiable steps!)'
+	},
+		{ 	
+		id : 5,
+		goal: 2,
+		title: 'Add to Ember Guides on Github and submit pull request.'
+	},
+	{ 	
+		id : 6,
 		goal: 3,
 		title: 'Buy Domain'
 	}
