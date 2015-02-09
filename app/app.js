@@ -20,7 +20,7 @@ var Point = Ember.Object.extend({
 	y: null, 
 	z: null,
 	logX: function(){ 
-		console.log('Log X :',  this.get('x')); 
+		//console.log('Log X :',  this.get('x')); 
 		return this; // returning this allows chaining like jQuery
 	}
 });
@@ -36,12 +36,12 @@ var PointPlus = Point.extend({
 				  // point.get('squareX')
 
 	add: function(){ 
-		console.log('Add...'); 
+		//console.log('Add...'); 
 		this.set('x', this.get('x')+1 );
 		return this;  // returning this allows chaining like jQuery
 	},
 	xDidChange: function(){
-		console.log( 'Observer: X has changed, X is now:', this.get('x') );
+		//console.log( 'Observer: X has changed, X is now:', this.get('x') );
 	}.observes('x').on('init') // on init catches the initial value setting
 });
 
@@ -53,6 +53,6 @@ var point = PointPlus.create({
 
 point.logX().add().logX();
 
-console.log( point.get('squareX') );
+//console.log( point.get('squareX') );
 
 export default App;

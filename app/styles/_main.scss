@@ -2,9 +2,6 @@
 $border-color : #ccc;
 $border-style: 1px solid $border-color;
 
-html, body {
-  /*margin: 20px;*/
-}
 h2 { 
 	font-family: 'PT Sans', sans-serif; 
 }
@@ -115,8 +112,5 @@ h4 .delete-x:hover {
 	svg {
 		margin: 0 auto;
 		display: block;
-	}
-	.label {
-		color: blue;
 	}
 }

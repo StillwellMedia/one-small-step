@@ -33,7 +33,7 @@ Goal.reopenClass({FIXTURES : [
 		title: 'Learn Ember.js',
 		description : 'No piece makes sense, without first understanding all the other pieces.',
 		createdAt: '2015-01-20T15:04:01',
-		lastEdited: '2015-02-08T17:39:00',
+		lastEdited: '2015-02-09T17:39:00',
 		percentComplete: 0
 	},
 	{ 	

@@ -1,6 +1,14 @@
-{{view 'd3-pie-chart' content=filteredGoals}}
+{{#if hasFilteredItems}}
+	{{view 'd3-pie-chart' content=filteredGoals}}
+{{else}}
+	{{#center-layout}}
+		<h3>No goals to Display!</h3>
+		<p>Want to make a new one?</p>
+		{{#link-to 'goals.new' class="button"}}New Goal{{/link-to}}
+	{{/center-layout}}
+{{/if}}
 
-<p>Goals: {{numGoals}}</p>
+<p>Total Goals: {{numGoals}}</p>
 
 {{#if hasItems}}
 <a href="#" {{action 'filterToday'}}>Today</a>

@@ -23,7 +23,7 @@ export default Ember.ObjectController.extend({
 	    	return goals; 
 	    }
 
-    }.property('editedDate', 'goals'), // function is updated when editedDate changes
+    }.property('editedDate','goals.[]'), // function is updated when editedDate changes
 
 
 	numGoals: function() {
@@ -33,6 +33,14 @@ export default Ember.ObjectController.extend({
 	hasItems: function() {
         return this.get('numGoals') > 0;
     }.property('numGoals'),
+
+    numFilteredGoals: function() {
+        return this.get('filteredGoals.length');
+    }.property('filteredGoals'), // function is updated when goals array changes
+
+    hasFilteredItems: function() {
+        return this.get('numFilteredGoals') > 0;
+    }.property('numFilteredGoals'),
 
     destroyGoal: function( goal ) {
     	var store = this.store;
