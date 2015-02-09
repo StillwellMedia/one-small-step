@@ -14,7 +14,7 @@ Router.map(function() {
   	this.route('new');
   	this.route('list');  // ember g route goals/list // then re-write the router code
 	  this.route('goal', { path: '/goal/:goal_id' });
-	  //this.route('edit', { path: '/goal/:goal_id'/edit });
+	  //this.route('edit', { path: '/goal/:goal_id/edit' });
   });
   this.route('fileNotFound', {path: '/*wildcard'});
 

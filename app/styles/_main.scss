@@ -96,3 +96,27 @@ h4 .delete-x:hover {
 	
 }
 
+
+/*  d3 css */
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+.d3-pie-chart {
+	min-width:30px;
+	min-height: 30px;
+	border: $border-style;
+
+	svg {
+		margin: 0 auto;
+		display: block;
+	}
+	.label {
+		color: blue;
+	}
+}

@@ -35,7 +35,7 @@ Step.reopenClass({FIXTURES : [
 	{ 	
 		id : 6,
 		goal: 3,
-		title: 'Buy Domain'
+		title: 'Chart it up!'
 	}
 ]});
 

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+//import moment from 'bower_components/moment/moment';
 
 export default Ember.ObjectController.extend({
 	queryParams: ['editedDate'], // ?query to url

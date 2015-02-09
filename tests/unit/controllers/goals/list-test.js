@@ -2,6 +2,8 @@ import {
   moduleFor,
   test
 } from 'ember-qunit';
+//import moment from 'bower_components/moment/moment';
+
 
 moduleFor('controller:goals/list', 'GoalsListController', {
   // Specify the other units that are required for this test.

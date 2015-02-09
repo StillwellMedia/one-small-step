@@ -18,6 +18,7 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 //app.import('node_modules/ember-cli-moment/index.js');
 app.import('bower_components/moment/moment.js');
+app.import('bower_components/d3/d3.js');
 
 
 module.exports = app.toTree();

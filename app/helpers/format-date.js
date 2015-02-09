@@ -1,4 +1,5 @@
 import Ember from "ember";
+//import moment from 'bower_components/moment/moment';
 
  // http://momentjs.com/
 export default Ember.Handlebars.makeBoundHelper(function(value, format) {
