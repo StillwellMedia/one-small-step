@@ -104,13 +104,30 @@ h4 .delete-x:hover {
   color: white;
 }
 
-.d3-pie-chart {
-	min-width:30px;
+.d3-chart {
+	min-width: 30px;
 	min-height: 30px;
 	border: $border-style;
 
 	svg {
 		margin: 0 auto;
 		display: block;
+		/*background-color: #eee;*/
+	}
+
+	.node circle {
+	  fill: #fff;
+	  stroke: steelblue;
+	  stroke-width: 1.5px;
+	}
+
+	.node {
+	  font: 12px sans-serif;
+	}
+
+	.link {
+	  fill: none;
+	  stroke: #ccc;
+	  stroke-width: 2px;
 	}
 }

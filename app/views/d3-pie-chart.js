@@ -1,36 +1,17 @@
-import Ember from 'ember';
+import d3View from './d3-base';
 
-export default Ember.View.extend({
+export default d3View.extend({
 	classNames: ['d3-pie-chart'],
 
-	data: function(){
-
-		return this.get('content.[]').toArray();
-	}.property('content.[]'),
-
-	chart: null,
-
-	chartWidth: 300,
-
-	chartHeight: 300,
-
-	didInsertElement: function() {
-		var svg = d3.select(this.$()[0]).append("svg:svg")
-		   .attr("width", this.get('chartWidth'))
-		   .attr("height", this.get('chartHeight'));
-
-		this.set('chart', svg );
-		this.draw();
-	},
-
 	draw: function() {
+
 		var svg = this.get('chart');
 		var tspanWidth = this.get('chartHeight') / 4;
 		var x = d3.scale.ordinal().rangeRoundBands([0, tspanWidth], 0.1, 0.3);
 		var dataset = this.get('data');
-		var color = d3.scale.category20();
 		var outerRadius = this.get('chartHeight') /2.2;
 		var innerRadius = this.get('chartHeight') / 6;
+		var color = d3.scale.category20();
 		var pie = d3.layout.pie().value(function(d){
 			
 		  return ( d.get('percentComplete') === 0 ) ? 1 : d.get('percentComplete');
@@ -86,28 +67,6 @@ export default Ember.View.extend({
 		        return d.data.get('title');
 		    }).call(this.wrap, x.rangeBand());
 
-	}.observes('data'),
-
-	// adapted from http://bl.ocks.org/mbostock/7555321
-	wrap: function( text, width ){
-		  text.each(function() {
-		    var text = d3.select(this),
-		        words = text.text().split(/\s+/).reverse(),
-		        word,
-		        line = [],
-		        y = text.attr("y");
-		     var dy = parseFloat(text.attr("dy")) || 1,
-		        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-		    while (word = words.pop()) {
-		      line.push(word);
-		      tspan.text(line.join(" "));
-		      if (tspan.node().getComputedTextLength() > width) {
-		        line.pop();
-		        tspan.text(line.join(" "));
-		        line = [word];
-		        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + 0.1 + "em").text(word);
-		      }
-		    }
-		  });
 	}
+
 });
