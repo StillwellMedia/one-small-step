@@ -21,7 +21,7 @@
 			<li>
 				<h4>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}} <a class="delete-x" href="javascript(0):void" {{action 'delete' this}}>x</a></h4>
 				{{#if steps}}
-					<ul>
+					<ul class="steps">
 						{{#each steps}}
 							{{partial 'step'}}
 						{{/each}}

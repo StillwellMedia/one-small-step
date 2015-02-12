@@ -9,7 +9,7 @@ export default Ember.Route.extend({
 	},
 
     randomGoal : function () {
-    	this.transitionTo('/goals/goal/' + this.get('controller').randomGoal());
+    	this.transitionTo('/goals/' + this.get('controller').randomGoal());
     },
 
 	actions : {

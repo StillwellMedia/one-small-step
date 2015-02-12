@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+    // didInsertElement: function
 	numGoals: function() {
         return this.get('goals.length');
     }.property('goals.[]'), // function is updated when goals array changes

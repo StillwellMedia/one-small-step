@@ -93,6 +93,15 @@ h4 .delete-x:hover {
 	
 }
 
+/* Step list */
+.steps {
+	list-style: none;
+	&.goal { margin-left: 2px; }
+
+	input {
+		margin: 0;
+	}
+}
 
 /*  d3 css */
 .chart div {
@@ -112,7 +121,6 @@ h4 .delete-x:hover {
 	svg {
 		margin: 0 auto;
 		display: block;
-		/*background-color: #eee;*/
 	}
 
 	.node circle {

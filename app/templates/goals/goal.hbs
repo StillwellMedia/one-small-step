@@ -1,5 +1,4 @@
 <div class="goal-display">
-	<!-- <img src="http://placehold.it/350x150&text=D3chart"><br/> -->
 	{{view 'd3-playground' content=this}}
 	<div class="dates">
 		<p class="left">Created: {{format-date createdAt}}</p>
@@ -8,9 +7,8 @@
 </div>
 
 <h2>{{title}}</h2>
-
 <p class="description">{{description}}</p> 
-<ul> 
+<ul class="goal steps"> 
 	{{#each steps}}
 		{{partial 'step'}}
 	{{/each}}

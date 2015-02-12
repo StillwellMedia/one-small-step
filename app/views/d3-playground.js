@@ -8,9 +8,13 @@ export default d3View.extend({
 	
 	chartWidth: '100%',
 
-	offsetLeft: 200,
+	offsetLeft: function(){
+		return parseInt( this.get('chartWidth') * 0.2);
+	}.property('chartWidth'),
 
-	offsetRight: 300,
+	offsetRight: function(){
+		return parseInt( this.get('chartWidth') * 0.3);
+	}.property('chartWidth'),
 
 	data: function(){
 		var data;
@@ -52,14 +56,15 @@ export default d3View.extend({
 	}.property('content.[]'),
 
 	didInsertElement: function() {
-		this._super();
+		this.set('chartWidth', parseInt( this.$().width()) );
 		$(window).bind('resize', $.proxy( this.resizeHandler, this ) );
+		this._super();
 	},
 
 	draw: function() {
 		// vars 
 	 	var height = this.get('chartHeight');
-		var width = parseInt( this.$().width() ); //get('chartWidth');
+		var width = this.get('chartWidth'); //parseInt( this.$().width() ); //get('chartWidth');
 		var offsetLeft = this.get('offsetLeft');
 		var offsetRight = this.get('offsetRight');
 	//	var x = d3.scale.ordinal().rangeRoundBands([0, offsetRight/3], 0.1, 0.3);
@@ -71,7 +76,7 @@ export default d3View.extend({
 		//d3 functions
 		var cluster = d3.layout.cluster()
 						// .size(['50px', '50px']);
-						.size([height, width -offsetRight-offsetLeft ]); // offsetRight  - offset for text labels
+						.size([height, width - offsetRight - offsetLeft ]); // offsetRight  - offset for text labels
 
 		var diagonal = d3.svg.diagonal()
     					.projection(function(d) {
@@ -129,6 +134,7 @@ export default d3View.extend({
 	},
 
 	reset: function(){
+		this.set('chartWidth', parseInt( this.$().width()) );
 		this.get('chart').selectAll('*').remove();
         this.draw();
 
