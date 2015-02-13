@@ -17,12 +17,12 @@
 {{!-- {{#link-to 'goals.list' (query-params dateQuery="02/05/2015")}}Sort{{/link-to}} --}}
 
 	<ol class="goal-panel">
-		{{#each filteredGoals}}
+		{{#each filteredGoals itemController="goals.goal"}}
 			<li>
-				<h4>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}} <a class="delete-x" href="javascript(0):void" {{action 'delete' this}}>x</a></h4>
+				<h4 {{bind-attr class="isCompleted"}}>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}} <a class="delete-x" href="javascript(0):void" {{action 'delete' this}}>x</a></h4>
 				{{#if steps}}
 					<ul class="steps">
-						{{#each steps}}
+						{{#each steps itemController="goals.step"}}
 							{{partial 'step'}}
 						{{/each}}
 					</ul>

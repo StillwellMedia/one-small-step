@@ -6,10 +6,10 @@
 	</div>
 </div>
 
-<h2>{{title}}</h2>
+<h2 {{bind-attr class="isCompleted"}}>{{title}}</h2>
 <p class="description">{{description}}</p> 
 <ul class="goal steps"> 
-	{{#each steps}}
+	{{#each steps itemController="goals.step"}}
 		{{partial 'step'}}
 	{{/each}}
 </ul>

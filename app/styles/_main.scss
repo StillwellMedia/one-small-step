@@ -101,6 +101,15 @@ h4 .delete-x:hover {
 	input {
 		margin: 0;
 	}
+	
+}
+.is-completed {
+	text-decoration: line-through;
+	color: $border-color;
+
+	a { color: inherit; }
+	input { opacity: .5; }
+	.delete-x { display: none; }
 }
 
 /*  d3 css */

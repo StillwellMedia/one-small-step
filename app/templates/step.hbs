@@ -1,6 +1,7 @@
 <li>
-	<label>
-		{{input type="checkbox" checked=isCompleted }}
+	<label {{bind-attr class="isCompleted"}}>
+		{{!-- assigning isCompleted to checked triggers changees in the controller/ model on change--}}
+		{{input type="checkbox" checked=isCompleted }} 
 		{{title}}
 	</label>
 <!-- 	<div>timer</div> -->
