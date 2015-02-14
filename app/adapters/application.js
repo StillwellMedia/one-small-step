@@ -1,5 +1,5 @@
 import DS from 'ember-data';
 
 export default DS.LSAdapter.extend({
-	 // latency: 50 
+  namespace: 'to-do-app'
 });

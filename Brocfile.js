@@ -19,6 +19,6 @@ var app = new EmberApp();
 //app.import('node_modules/ember-cli-moment/index.js');
 app.import('bower_components/moment/moment.js');
 app.import('bower_components/d3/d3.js');
-
+app.import('bower_components/ember-localstorage-adapter/localstorage_adapter.js');
 
 module.exports = app.toTree();
