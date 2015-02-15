@@ -1,4 +1,40 @@
-{{!-- <p>Total goals acheived over time</p> --}}
-<br/>
+{{#if hasFilteredItems}}
+	{{view 'd3-pie-chart' content=filteredGoals}}
+{{else}}
+	{{#center-layout}}
+		<h3>No goals to Display!</h3>
+		<p>Want to make a new one?</p>
+		{{#link-to 'goals.new' class="button"}}New Goal{{/link-to}}
+	{{/center-layout}}
+{{/if}}
 
-{{render 'goals.list' this}}
+<p>Total Goals: {{numGoals}}</p>
+
+{{#if hasItems}}
+<a href="#" {{action 'filterToday'}} {{bind-attr class="editedDate:active"}}>Today</a>
+:
+{{#link-to 'goals' (query-params isCompleted="true")}}Achieved{{/link-to}}
+:
+{{#link-to 'goals' (query-params isCompleted="false")}}In Progress{{/link-to}}
+:
+<a href="#" {{action 'filterReset'}} {{bind-attr class="editedDate::active isCompleted::active"}}>all</a>
+
+	<ol class="goal-panel">
+		{{#each filteredGoals itemController="goals.goal"}}
+			<li>
+				<h4 {{bind-attr class="isCompleted"}}>{{#link-to 'goals.goal' this}} {{title}} {{/link-to}} <a class="delete-x" href="javascript(0):void" {{action 'delete' this}}>x</a></h4>
+				{{#if steps}}
+					<ul class="steps">
+						{{#each steps itemController="goals.step"}}
+							{{partial 'step'}}
+						{{/each}}
+					</ul>
+				{{/if}}
+			</li>
+		{{/each}}
+	</ol>
+{{/if}}
+
+
+
+

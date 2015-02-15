@@ -6,24 +6,45 @@ export default Ember.ObjectController.extend({
 	
 	editedDate: null, // ? =param to url
 
+	filteredSet: null,
+
 	filteredGoals: function() {
+		var filteredSet = this.get('filteredSet');
+		if (filteredSet) {
+			console.log('ffilteredSet',filteredSet);
+			return this.get('filteredSet');
+        	
+	    } else {
+	    	console.log('else');
+	        return this.get('goals');
+	    }
+
+    }.property('filteredSet'),
+
+	filteredGoalss: function() {
         var editedDate = this.get('editedDate');
         var sortDate = moment( editedDate ).format('L'); //redundent now but won't be in the future
 	    var goals = this.get('goals');
+	    var filtered;
+
+	    console.log('hi');
 
 	    if ( editedDate ) {
 	    	// Filter out the goals that match the provided date and show them 
 	    	// http://emberjs.com/api/#method_computed_filter (goal, index, array)
-	    	return goals.filter(function(goal) {
+
+	    	filtered = goals.filter(function(goal) {
 			    return moment(goal.get('lastEdited')).format('L') === sortDate;
 			});
+			this.set('filteredSet', filtered);
 	    } else {
 
-	    	// If no query show all goals
-	    	return goals; 
+	    	// // If no query show all goals
+	    	// this.set('filteredSet', goals);
+	    	// return goals; 
 	    }
 
-    }.property('editedDate','goals.[]'), // function is updated when editedDate changes
+    }.property('editedDate','goals.[]'),//.observes('editedDate'),//.property('editedDate','goals.[]'), // function is updated when editedDate changes
 
 
 	numGoals: function() {
@@ -67,11 +88,15 @@ export default Ember.ObjectController.extend({
 		},
 
 		filterToday: function( ) {
+			console.log('filter today');
+			
 			this.set('editedDate', moment(new Date()).format('L') );
+
 		},
 
 		filterReset: function( ) {
 			this.set('editedDate', null );
+			this.set('filteredSet', null);
 		}
 	}
 });

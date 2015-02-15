@@ -8,13 +8,17 @@ export default Ember.ObjectController.extend({
 	}.property('steps'),
 
 	isCompleted: function(){
+		var model = this.get('model');
 	  	var steps = this.get('steps');
 
 	  	if ( this.get('numSteps') > 0 ){ 
+	  		if ( steps.filterBy('isCompleted', true).get('length') === steps.get('length') ) {
 
-    		return steps.filterBy('isCompleted', true).get('length') === steps.get('length');
+	    		model.set('isCompleted', true);
+				model.save();
+	  			return true;
+	  		}
     	} else {
-
     		return false;
     	}
     	
