@@ -17,7 +17,7 @@
 :
 {{#link-to 'goals' (query-params isCompleted="false")}}In Progress{{/link-to}}
 :
-<a href="#" {{action 'filterReset'}} {{bind-attr class="editedDate::active isCompleted::active"}}>all</a>
+<a href="#" {{action 'filterReset'}} {{bind-attr class="editedDate::active isCompleted::active"}}>All</a>
 
 	<ol class="goal-panel">
 		{{#each filteredGoals itemController="goals.goal"}}
@@ -34,7 +34,3 @@
 		{{/each}}
 	</ol>
 {{/if}}
-
-
-
-

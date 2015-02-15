@@ -12,7 +12,6 @@ Router.map(function() {
     // undeclared: loading
     // undeclared: error
   	this.route('new');
-  	this.route('list');  // ember g route goals/list // then re-write the router code
 	  this.route('goal', { path: ':goal_id' });
 	  //this.route('edit', { path: '/:goal_id/edit' });
   });
