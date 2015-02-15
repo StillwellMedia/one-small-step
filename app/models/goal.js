@@ -7,9 +7,7 @@ import DS from 'ember-data';
 var Goal = DS.Model.extend({
 	title: DS.attr('string'),
 	description: DS.attr('string'),
-	percentComplete: DS.attr('number', {
-          defaultValue: function() { return 0; }
-    }),
+	percentComplete: DS.attr('number', { defaultValue: 0 }),
 	steps: DS.hasMany('step'),// {async: true})
 	createdAt: DS.attr('date', {
           defaultValue: function() { return new Date(); }
@@ -17,7 +15,7 @@ var Goal = DS.Model.extend({
 	lastEdited: DS.attr('date', {
           defaultValue: function() { return new Date(); }
     }),
-    isCompleted: DS.attr('boolean')
+    isCompleted: DS.attr('boolean', { defaultValue: false })
 });
 
 Goal.reopenClass({FIXTURES : [

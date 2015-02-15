@@ -46,8 +46,12 @@ export default Ember.ObjectController.extend({
 
 	    return goals;
 
-
     }.property('editedDate', 'isCompleted', 'model'),
+
+	anyFilters: function() {
+        return this.get('editedDate') || this.get('isCompleted');
+
+    }.property('editedDate', 'isCompleted'), 
 
 	numGoals: function() {
         return this.get('goals.length');
