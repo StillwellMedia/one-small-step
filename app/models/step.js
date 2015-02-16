@@ -3,7 +3,7 @@ import DS from 'ember-data';
 var Step = DS.Model.extend({
   goal: DS.belongsTo('goal'),
   title: DS.attr('string'),
-  isCompleted: DS.attr('boolean')
+  isCompleted: DS.attr('boolean', { defaultValue: false })
 });
 
 

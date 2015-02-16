@@ -1,0 +1,11 @@
+<h4 {{bind-attr class="goal.isCompleted"}}>{{#link-to 'goals.goal' goal}} {{goal.title}} {{/link-to}} <a class="delete-x" href="javascript(0):void" {{action 'delete' goal }}>x</a></h4>
+
+{{yield}}
+
+{{#if steps}}
+	<ul class="steps">
+		{{#each steps itemController="goals.step"}}
+			{{partial 'step'}}
+		{{/each}}
+	</ul>
+{{/if}}

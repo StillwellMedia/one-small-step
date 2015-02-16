@@ -13,8 +13,8 @@ export default d3View.extend({
 		var innerRadius = this.get('chartHeight') / 6;
 		var color = d3.scale.category20();
 		var pie = d3.layout.pie().value(function(d){
-			
-		  return ( d.get('percentComplete') === 0 ) ? 1 : d.get('percentComplete');
+			//console.log( d.get('steps.length') );
+		  return ( d.get('steps.length') === 0 ) ? 1 : d.get('steps.length');
 		});
 		
         //GROUP FOR ARCS/PATHS
