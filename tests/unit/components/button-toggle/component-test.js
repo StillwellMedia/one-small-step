@@ -3,10 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForComponent('listed-goal', 'ListedGoalComponent', {
+moduleForComponent('button-toggle', 'ButtonToggleComponent', {
   // specify the other units that are required for this test
   // needs: ['component:foo', 'helper:bar']
-  needs: ['component:button-toggle']
 });
 
 test('it renders', function() {

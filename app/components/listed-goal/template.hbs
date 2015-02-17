@@ -1,9 +1,15 @@
-<h4 {{bind-attr class="goal.isCompleted"}}>{{#link-to 'goals.goal' goal}} {{goal.title}} {{/link-to}} <a class="delete-x" href="javascript(0):void" {{action 'delete' goal }}>x</a></h4>
+<span class="topLine">
+	<a class="delete-x right" href="javascript(0):void" {{action 'delete' goal }}>x</a>
+
+	{{button-toggle action="toggleSteps" visible=hasSteps from="fa-angle-right" to="fa-angle-down" class="left"}}
+
+<h4 {{bind-attr class="goal.isCompleted"}}>{{#link-to 'goals.goal' goal}} {{goal.title}} {{/link-to}}</h4>
+</span>
 
 {{yield}}
 
-{{#if steps}}
-	<ul class="steps">
+{{#if showSteps}}
+	<ul class="steps" style="display:none">
 		{{#each steps itemController="goals.step"}}
 			{{partial 'step'}}
 		{{/each}}

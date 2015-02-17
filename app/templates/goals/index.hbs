@@ -19,10 +19,10 @@
 	:
 	<a href="#" {{action 'filterReset'}} {{bind-attr class="anyFilters::active"}}>All</a>
 
-	<ol class="goal-panel">
+	<ul class="goal-panel">
 		{{#each filteredGoals itemController="goals.goal"}}
-			{{listed-goal goal=this steps=steps delete="delete"}}
+			{{listed-goal goal=this steps=steps action="delete"}}
 		{{/each}}
-	</ol>
+	</ul>
 {{/if}}
  

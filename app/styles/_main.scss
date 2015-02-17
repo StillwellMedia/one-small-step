@@ -1,3 +1,10 @@
+.ember-view {
+	/*border: 1px solid rgb(113, 70, 70);
+	padding: 5px;
+	margin: 2px; */
+	/*background-color: rgba(79, 61, 39, 0.1);*/
+}
+
 
 $border-color : #ccc;
 $border-style: 1px solid $border-color;
@@ -33,48 +40,65 @@ footer {
 	}
 }
 
-.goal-panel {
-	padding: 5px;
-	margin: 10px 0;
-	border: $border-style;
-
-	li {
-		list-style-position: inside;
-	}
-}
-
-.ember-view {
-/*	border: 1px solid rgb(113, 70, 70);
-	padding: 5px;
-	margin: 2px;
-	background-color: rgba(79, 61, 39, 0.2); */
-}
-
 .center.layout {
 	padding: 40px 0 50px;
 
 	.button { margin-top: 35px; }
 }
 
-.delete-x {
+.goal-panel {
+	$goal-indent: 30px;
+
+	/*padding: 5px;*/
+	margin: 10px 0;
+	border: $border-style;
+
+	h4 { 
+		margin: 0;
+		padding-left: $goal-indent; 
+	}
+
+	ul { margin-left: $goal-indent; }
+
+	& > li { 
+		list-style-type: none; 
+		padding: 5px;
+		border-bottom: 1px solid scale-color($border-color, $lightness: 50%);
+	}
+	li:last-of-type {
+		border-bottom: none;
+	}
+}
+
+.delete-x, a.fa {
 	color: $border-color;
 	font-weight: bold;
+	font-size: 20px;
 	line-height: 1em;
 
-	padding: 1px 3px 3px;
+	padding: 4px 5px 5px;
 	margin-right: 2px;
+	text-align: center;
 
-	float: right;
+	min-width: 20px; 
 
 	transition: color 300ms ease;
 
+	/*background-color: red;*/
+
 }
-h4:hover .delete-x {
-	color: scale-color($border-color, $lightness: -20%);
+
+a.fa { 
+	padding-top: 2px; 
+	font-size: 25px; 
 }
-h4 .delete-x:hover {
-	color: #D7451A;
-}
+
+a.fa:hover { color: scale-color($border-color, $lightness: -20%); }
+
+.delete-x:hover { color: #D7451A; }
+
+.invisible{ visibility: hidden; }
+
 // goal.hbs 
 .goal-display {
 	img {
