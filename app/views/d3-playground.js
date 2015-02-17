@@ -77,21 +77,23 @@ export default d3View.extend({
 		var cluster = d3.layout.cluster()
 						// .size(['50px', '50px']);
 						.size([height, width - offsetRight - offsetLeft ]); // offsetRight  - offset for text labels
-
+/*
 		var diagonal = d3.svg.diagonal()
     					.projection(function(d) {
     						return [d.y, d.x]; 
     					});
+*/
 
+		var nodes = cluster.nodes( this.get('data') ); //,
+	//    var links = cluster.links(nodes);
 
-		var nodes = cluster.nodes( this.get('data') ),
-	        links = cluster.links(nodes);
-
+/*
 		var link = svg.selectAll(".link")
 		      .data(links)
 		    .enter().append("path")
 		      .attr("class", "link")
 		      .attr("d", diagonal);
+*/
 
 		var node = svg.selectAll(".node")
 		      .data(nodes)

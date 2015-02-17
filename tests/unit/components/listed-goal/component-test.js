@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForComponent('lisetd-goal', 'LisetdGoalComponent', {
+moduleForComponent('listed-goal', 'ListedGoalComponent', {
   // specify the other units that are required for this test
   // needs: ['component:foo', 'helper:bar']
 });

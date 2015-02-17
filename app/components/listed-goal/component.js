@@ -10,7 +10,7 @@ export default Ember.Component.extend({
 			// in index hbs this action is sent to goal controller because 
 			// the item controller is declared like so:
 			// {{#each filteredGoals itemController="goals.goal"}}
-			// have to put delete="delete" in component {{ expession }}
+			// have to put delete="delete" in component {{ expression }}
 			this.sendAction('delete', goal);
 		}
 	}
