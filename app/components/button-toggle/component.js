@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 	
 	attributeBindings: ['href'],
   	
-  	href: "#",
+   	href: "#",
 
 	classNameBindings: [':fa', 'toggleClass', 'isVisible'],
 
@@ -21,23 +21,21 @@ export default Ember.Component.extend({
 		
 		if ( this.get('isToggled') ) {
   			return this.get('to');
-  		} else {
-  			return this.get('from');
   		}
+  		return this.get('from');
   		
   	}.property('isToggled'),
 
   	isVisible: function(){
   		if ( this.get('visible') ) {
   			return '';
-  		} else {
-  			return 'invisible';
   		}
+  		return 'invisible';
 
   	}.property('visible'),
 
   	click: function() {
-  		this.set('isToggled', !this.get('isToggled') );
+  		this.toggleProperty('isToggled');
   		this.sendAction();
   		return false;
   	}

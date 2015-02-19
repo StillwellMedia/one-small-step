@@ -18,6 +18,9 @@
 	{{#link-to 'goals' (query-params isCompleted="false")}}In Progress{{/link-to}}
 	:
 	<a href="#" {{action 'filterReset'}} {{bind-attr class="anyFilters::active"}}>All</a>
+	<br />
+	<a href="#" {{action 'expandAll'}}>Expand All</a>
+	: <a href="#" {{action 'collapseAll'}}>Collapse All</a>
 
 	<ul class="goal-panel">
 		{{#each filteredGoals itemController="goals.goal"}}

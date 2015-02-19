@@ -3,30 +3,56 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	tagName: 'li',
 
-	collapsed: true,
+	// Probably too coupled
+	allExpanded: Ember.computed.alias("targetObject.parentController.allExpanded"), // linked to indexController
+
+	allCollapsed: Ember.computed.alias("targetObject.parentController.allCollapsed"), // linked to indexController
+
+	isCollapsed: true, // default is true
 
 	showSteps: false,
+
+	didInsertElement: function() {
+		//establish the connection
+		this.get('targetObject.parentController.allExpanded');
+ 		this.get('targetObject.parentController.allCollapsed');
+	},
 
 	hasSteps: function(){
 		return this.get('steps.length') > 0;
 	}.property(),
 
-	collapseToggleObserver: function(){
+	thisCollapseToggleObserver: function(){
 		var that = this;
 
-		if ( !this.get('collapsed') && this.get('hasSteps') ){
+		if ( !this.get('isCollapsed') && this.get('hasSteps') ){
 			// put steps in dom
 			// then open steps
 			this.set('showSteps', true);
+			this.set('allCollapsed', false);
 			this.animateSteps();
 		} else {
 			// close steps
 			// then remove steps from dom
 			this.animateSteps(function(){
 				that.set('showSteps', false);
+				that.set('allExpanded', false);
 			});
 		}
-	}.observes('collapsed'),
+	}.observes('isCollapsed'),
+
+	controllerCollapseToggleObserver: function(){
+		if ( this.get('allExpanded') ) {
+			console.log('expand me');
+			this.set('isCollapsed', false);
+		}
+
+		if ( this.get('allCollapsed') ) {
+			console.log('collapse me');
+			this.set('isCollapsed', true);
+		}
+
+	}.observes('allExpanded', 'allCollapsed'),  
 
 	animateSteps: function( callback ) {
 		Ember.run.scheduleOnce('afterRender', this, function() {
@@ -54,7 +80,10 @@ export default Ember.Component.extend({
 		},
 
 		toggleSteps: function() {
-			this.set('collapsed', !this.get('collapsed'));
+			
+	 	 	this.toggleProperty('isCollapsed');	 	 	
+
+			return false;
 		}
 	}
 });

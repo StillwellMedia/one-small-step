@@ -8,6 +8,10 @@ export default Ember.ObjectController.extend({
 
 	isCompleted: null,
 
+	allExpanded: false,
+
+	allCollapsed: true,
+
 	// filters build upon each other
  	filteredGoals: function() {
  		var that = this;
@@ -78,6 +82,17 @@ export default Ember.ObjectController.extend({
 		filterReset: function( ) {
 			this.set('isCompleted', null);
 			this.set('editedDate', null);
+		},
+
+		expandAll: function( ) {
+			this.set('allExpanded', true);
+			this.set('allCollapsed', false);
+		},
+
+		collapseAll: function( ) {
+			this.set('allExpanded', false);
+			this.set('allCollapsed', true);
+			
 		}
 	}
 });
