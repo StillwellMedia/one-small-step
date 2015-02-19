@@ -1,7 +1,7 @@
 <span class="topLine">
 	<a class="delete-x right" href="javascript(0):void" {{action 'delete' goal }}>x</a>
 
-	{{button-toggle action="toggleSteps" visible=hasSteps from="fa-angle-right" to="fa-angle-down" class="left"}}
+	{{button-toggle action="toggleSteps" visible=hasSteps isToggled=isCollapsed from="fa-angle-right" to="fa-angle-down" class="left"}}
 
 <h4 {{bind-attr class="goal.isCompleted"}}>{{#link-to 'goals.goal' goal}} {{goal.title}} {{/link-to}}</h4>
 </span>

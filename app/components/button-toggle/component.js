@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 	
 	attributeBindings: ['href'],
   	
-   	href: "#",
+  href: "#",
 
 	classNameBindings: [':fa', 'toggleClass', 'isVisible'],
 
@@ -17,7 +17,7 @@ export default Ember.Component.extend({
 
 	to: 'fa-angle-down', // toggled Class
 
-  	toggleClass: function() {
+  toggleClass: function() {
 		
 		if ( this.get('isToggled') ) {
   			return this.get('to');
