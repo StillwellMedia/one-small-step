@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 
 	isToggled: false,
 
-	visible: false,
+	visible: true,
 
 	from: 'fa-angle-right', // default Class
 

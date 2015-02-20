@@ -85,7 +85,7 @@ footer {
 	transition: color 300ms ease;
 
 	/*background-color: red;*/
-
+	&:focus { outline: none; }
 }
 
 a.fa { 

@@ -1,12 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+	
+	// toggleCompleted: function(){
+	// 	return this.get('model').get('isCompleted')
+	// }.property('model'),
+	hasSteps: function() {
+		return this.get('numSteps') > 0;
+	}.property('numSteps'),
+
 	numSteps: function(){
 	  	var steps = this.get('steps');
     	return steps.get('length');
     	
 	}.property('steps'),
 
+	//rename to all steps completed, and move goal completion saving code into another function
 	isCompleted: function(){
 		var model = this.get('model');
 	  	var steps = this.get('steps');
@@ -18,9 +27,8 @@ export default Ember.ObjectController.extend({
 				model.save();
 	  			return true;
 	  		}
-    	} else {
-    		return false;
     	}
+    	return false;
     	
 	}.property('steps.@each.isCompleted'),
 
@@ -46,6 +54,13 @@ export default Ember.ObjectController.extend({
 		delete: function( goal ) { 
 			// console.log('delete in goal.js', goal);
 			this.destroyGoal( goal );
+		},
+		checkCompleted: function( value ){
+			//Stepless goals have a checkbox for marking off goals as complete
+			console.log('action recieved', value);
+			// this.get('toggleCompleted');
+			// this.set('toggleCompleted', value);
+			// this.get('toggleCompleted');
 		}
 	}
 

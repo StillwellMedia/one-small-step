@@ -18,6 +18,12 @@ export default Ember.Component.extend({
  		this.get('targetObject.parentController.allCollapsed');
 	},
 
+	isCompleted: function(key, value){
+	 	this.sendAction('checkCompleted', value);
+	 	return value;
+
+	}.property('isCompleted'),
+
 	hasSteps: function(){
 		return this.get('steps.length') > 0;
 	}.property(),

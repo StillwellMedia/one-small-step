@@ -6,6 +6,11 @@
 	</div>
 </div>
 
+{{#unless hasSteps}}
+	 <!-- Only show this toggle button if there are no steps -->
+	{{button-toggle isToggled=isCompleted from="fa-square-o" to="fa-check" class="left"}} 
+{{/unless}}
+
 <h2 {{bind-attr class="isCompleted"}}>{{title}}</h2>
 <p class="description">{{description}}</p> 
 <ul class="goal steps"> 

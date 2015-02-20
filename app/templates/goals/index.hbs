@@ -24,7 +24,7 @@
 
 	<ul class="goal-panel">
 		{{#each filteredGoals itemController="goals.goal"}}
-			{{listed-goal goal=this steps=steps action="delete"}}
+			{{listed-goal goal=this steps=steps action="delete" checkCompleted="checkCompleted"}}
 		{{/each}}
 	</ul>
 {{/if}}
