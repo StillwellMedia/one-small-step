@@ -18,12 +18,6 @@ export default Ember.Component.extend({
  		this.get('targetObject.parentController.allCollapsed');
 	},
 
-	isCompleted: function(key, value){
-	 	this.sendAction('checkCompleted', value);
-	 	return value;
-
-	}.property('isCompleted'),
-
 	hasSteps: function(){
 		return this.get('steps.length') > 0;
 	}.property(),
@@ -49,12 +43,10 @@ export default Ember.Component.extend({
 
 	controllerCollapseToggleObserver: function(){
 		if ( this.get('allExpanded') ) {
-			console.log('expand me');
 			this.set('isCollapsed', false);
 		}
 
 		if ( this.get('allCollapsed') ) {
-			console.log('collapse me');
 			this.set('isCollapsed', true);
 		}
 
@@ -82,14 +74,17 @@ export default Ember.Component.extend({
 			// Alt: this.sendAction('delete', goal);
 			//
 			//http://emberjs.com/guides/components/sending-actions-from-components-to-your-application/
-			this.sendAction('action', goal);
+			this.sendAction('deleteAction', goal);
 		},
 
 		toggleSteps: function() {
-			
 	 	 	this.toggleProperty('isCollapsed');	 	 	
 
 			return false;
+		},
+
+		setCompleted: function( event ){
+		 	this.sendAction('setCompletedAction');
 		}
 	}
 });

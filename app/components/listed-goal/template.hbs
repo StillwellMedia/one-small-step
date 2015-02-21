@@ -4,7 +4,7 @@
 	{{#if hasSteps}}
 		{{button-toggle action="toggleSteps" visible=hasSteps isToggled=isCollapsed from="fa-angle-right" to="fa-angle-down" class="left"}}
 	{{else}}
-		{{button-toggle isToggled=isCompleted from="fa-square-o" to="fa-check" class="left"}}
+		{{button-toggle action="setCompleted" isToggled=goal.isCompleted from="fa-square-o" to="fa-check" class="left"}}
 	{{/if}}
 
 	<h4 {{bind-attr class="goal.isCompleted"}}>{{#link-to 'goals.goal' goal}} {{goal.title}} {{/link-to}}</h4>

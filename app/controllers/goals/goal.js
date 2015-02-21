@@ -1,10 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-	
-	// toggleCompleted: function(){
-	// 	return this.get('model').get('isCompleted')
-	// }.property('model'),
+
+	isCompleted: function() {
+		var model = this.get('model');
+		return model.get('isCompleted');
+	}.property('model.isCompleted'),
+
 	hasSteps: function() {
 		return this.get('numSteps') > 0;
 	}.property('numSteps'),
@@ -16,21 +18,25 @@ export default Ember.ObjectController.extend({
 	}.property('steps'),
 
 	//rename to all steps completed, and move goal completion saving code into another function
-	isCompleted: function(){
-		var model = this.get('model');
+	stepsCompleted: function(){
 	  	var steps = this.get('steps');
 
 	  	if ( this.get('numSteps') > 0 ){ 
 	  		if ( steps.filterBy('isCompleted', true).get('length') === steps.get('length') ) {
-
-	    		model.set('isCompleted', true);
-				model.save();
+				this.saveCompletedState( true );
 	  			return true;
 	  		}
     	}
     	return false;
     	
 	}.property('steps.@each.isCompleted'),
+
+	saveCompletedState: function( bool ) {
+		var model = this.get('model');
+		model.set('isCompleted', bool );
+		model.set('lastEdited', new Date());
+		model.save();
+	},
 
 	destroyGoal: function( goal ) {
     	var store = this.store;
@@ -52,15 +58,14 @@ export default Ember.ObjectController.extend({
 
     actions : {
 		delete: function( goal ) { 
-			// console.log('delete in goal.js', goal);
+			//console.log('delete in goal.js', goal);
 			this.destroyGoal( goal );
 		},
-		checkCompleted: function( value ){
+		toggleCompleted: function( ) {
 			//Stepless goals have a checkbox for marking off goals as complete
-			console.log('action recieved', value);
-			// this.get('toggleCompleted');
-			// this.set('toggleCompleted', value);
-			// this.get('toggleCompleted');
+			console.log('action recieved');
+
+			this.saveCompletedState( !this.get('isCompleted') );
 		}
 	}
 

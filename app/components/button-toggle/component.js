@@ -38,9 +38,11 @@ export default Ember.Component.extend({
 
   	}.property('visible'),
 
-  	click: function() {
+  	click: function( event ) {
   		this.toggleProperty('isToggled'); // Toggles this variable between true and false
+
   		this.sendAction(); // Send a generic action that the parent can act upon
+
   		return false; // return false so that the page does not reload
   	}
 });
