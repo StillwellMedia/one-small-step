@@ -49,7 +49,6 @@ footer {
 .goal-panel {
 	$goal-indent: 30px;
 
-	/*padding: 5px;*/
 	margin: 10px 0;
 	border: $border-style;
 
@@ -68,9 +67,12 @@ footer {
 	li:last-of-type {
 		border-bottom: none;
 	}
+	.goal-checkbox {
+		margin: 0;
+	}
 }
 
-.delete-x, a.fa {
+.delete-x, .goal-checkbox {
 	color: $border-color;
 	font-weight: bold;
 	font-size: 20px;
@@ -84,22 +86,36 @@ footer {
 
 	transition: color 300ms ease;
 
-	/*background-color: red;*/
 	&:focus { outline: none; }
 }
 
-a.fa { 
-	padding-top: 2px; 
-	font-size: 25px; 
+// goals page
+.goal-checkbox { 
+	padding: 0; 
+	font-size: 25px;
+	margin-top: $header-top-margin;
+	line-height: $header-line-height;
 }
 
-a.fa:hover { color: scale-color($border-color, $lightness: -20%); }
+@media #{$small-only} { 
+	.goal-panel .goal-checkbox { 
+		line-height: 1.1
+	}
+}
+
+.goal-checkbox:hover { color: scale-color($border-color, $lightness: -20%); }
 
 .delete-x:hover { color: #D7451A; }
 
 .invisible{ visibility: hidden; }
 
+/*.fa-check { color: $success-color; }*/
+
 // goal.hbs 
+.goal-checkbox + h2 {
+	padding-left: 30px;
+}
+
 .goal-display {
 	img {
 		width: 100%;
@@ -116,7 +132,6 @@ a.fa:hover { color: scale-color($border-color, $lightness: -20%); }
 		font-size: 13px;
 		margin: 0;
 	}
-	
 }
 
 /* Step list */

@@ -6,12 +6,13 @@
 	</div>
 </div>
 
+
 {{#unless hasSteps}}
 	 <!-- Only show this toggle button if there are no steps -->
-	{{button-toggle isToggled=isCompleted from="fa-square-o" to="fa-check" class="left"}} 
+	{{button-toggle isToggled=isCompleted from="fa-square-o" to="fa-check" class="left goal-checkbox"}} 
 {{/unless}}
-
 <h2 {{bind-attr class="isCompleted"}}>{{title}}</h2>
+
 <p class="description">{{description}}</p> 
 <ul class="goal steps"> 
 	{{#each steps itemController="goals.step"}}

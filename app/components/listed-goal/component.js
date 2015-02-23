@@ -83,7 +83,7 @@ export default Ember.Component.extend({
 			return false;
 		},
 
-		setCompleted: function( event ){
+		setCompleted: function( ){
 		 	this.sendAction('setCompletedAction');
 		}
 	}
