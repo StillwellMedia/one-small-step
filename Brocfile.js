@@ -16,9 +16,21 @@ var app = new EmberApp();
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
-//app.import('node_modules/ember-cli-moment/index.js');
+
+app.import('bower_components/fontawesome/fonts/fontawesome-webfont.ttf', {
+   destDir: 'assets/fontawesome/fonts'
+});
+app.import('bower_components/fontawesome/fonts/fontawesome-webfont.woff', {
+   destDir: 'assets/fontawesome/fonts'
+});
+app.import('bower_components/fontawesome/fonts/fontawesome-webfont.woff2', {
+   destDir: 'assets/fontawesome/fonts'
+});
 app.import('bower_components/moment/moment.js');
 app.import('bower_components/d3/d3.js');
 app.import('bower_components/ember-localstorage-adapter/localstorage_adapter.js');
+
+// app.import('bower_components/fontawesome/fonts/fontawesome-webfont.ttf');
+// app.import('bower_components/fontawesome/fonts/fontawesome-webfont.ttf');
 
 module.exports = app.toTree();

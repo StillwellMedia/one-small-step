@@ -17,6 +17,7 @@ Router.map(function() {
   });
   this.route('fileNotFound', {path: '/*wildcard'});
 
+  this.route('test');
 });
 
 export default Router;

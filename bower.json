@@ -15,7 +15,8 @@
     "qunit": "~1.15.0",
     "moment": "~2.9.0",
     "foundation": "~5.5.0",
-    "d3": "~3.5.4"
+    "d3": "~3.5.4",
+    "fontawesome": "~4.3.0"
   },
   "devDependencies": {
     "foundation": "~5.5.0"

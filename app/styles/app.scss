@@ -5,5 +5,8 @@
 //@import 'bower_components/foundation/scss/normalize';
 @import 'bower_components/foundation/scss/foundation';
 
+$fa-font-path: "fontawesome/fonts" !default;
+@import 'bower_components/fontawesome/scss/font-awesome';
+
 //Main app styles
 @import 'main';
